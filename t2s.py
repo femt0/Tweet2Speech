@@ -51,6 +51,7 @@ api = tweepy.API(auth)
 v = pyvona.create_voice(iv_access_key, iv_access_secret)
 v.codec = 'mp3'
 v.voice_name = 'Celine'
+v.speechÂ_rate ='slow'
 sc = soundcloud.Client(access_token=sc_access_token)
 l = StdOutListener(v, sc, api)
 stream = Stream(auth, l)
