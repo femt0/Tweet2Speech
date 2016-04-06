@@ -7,7 +7,6 @@ import pyvona
 import json
 import soundcloud
 
-#Variables that contains the user credentials to access Twitter API 
 tw_access_token = ""
 tw_access_token_secret = ""
 tw_consumer_key = ""
@@ -51,10 +50,9 @@ api = tweepy.API(auth)
 v = pyvona.create_voice(iv_access_key, iv_access_secret)
 v.codec = 'mp3'
 v.voice_name = 'Celine'
-v.speechÂ_rate ='slow'
+v.speech_rate ='slow'
 sc = soundcloud.Client(access_token=sc_access_token)
 l = StdOutListener(v, sc, api)
 stream = Stream(auth, l)
 
-#This line filter Twitter Streams to capture data by the keywords: 'python', 'javascript', 'ruby'
 stream.filter(follow=[tw_target_id])
