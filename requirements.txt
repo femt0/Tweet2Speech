@@ -1,0 +1,4 @@
+tweepy
+gTTS
+soundcloud
+ffmpeg-python
